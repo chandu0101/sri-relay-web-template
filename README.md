@@ -3,6 +3,11 @@
 ## How to run 
 
 ```
+
+sbt ~fullOptJS
+
+// open new terminal
+
 npm install
 
 // go to sri-relay-web-template/node_modules/react-relay/dist/relay.js line number : 16572 change rootCallArg to [rootCallArg]
