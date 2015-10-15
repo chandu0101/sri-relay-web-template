@@ -1,5 +1,6 @@
 package sri.templates.relayweb.mutations
 
+import org.scalajs.dom
 import sri.relay.mutation.RelayMutation
 import sri.relay.query.RelayQL
 import sri.relay.tools.RelayTypes.MutationFragment
@@ -10,7 +11,7 @@ import scala.scalajs.js.annotation.ScalaJSDefined
 import scala.scalajs.js.{Any, Array, Dictionary, UndefOr}
 
 @ScalaJSDefined
-class AddTodoMutation(props : js.Dynamic) extends RelayMutation(props) {
+class AddTodoMutation(input : js.Dynamic) extends RelayMutation(input) {
 
   override def getMutation(): MutationFragment = {
     js.eval(RelayQL( """mutation{ createTodo }"""))
@@ -32,13 +33,14 @@ class AddTodoMutation(props : js.Dynamic) extends RelayMutation(props) {
             }
     """))
 
-//  override def getOptimisticResponse(): UndefOr[js.Object] = {
-//
-//    json("changedTodoEdge" -> js.Dictionary("node" -> js.Dictionary("text" -> props.text, "complete" -> false)),
-//      "viewer" -> js.Dictionary("id" -> props.viewer.id, "allTodos" -> js.Dictionary("id" -> props.viewer.id, "allTodos" -> js.Dictionary("count" -> (props.viewer.allTodos.count.asInstanceOf[Int] + 1))))
-//    )
-//
-//  }
+  override def getOptimisticResponse(): UndefOr[js.Object] = {
+    println(s"optimistic props")
+    dom.window.console.log(props)
+    dom.window.console.log(input)
+    json("changedTodoEdge" -> json("node" -> js.Dictionary("text" -> props.text, "complete" -> false)),
+      "viewer" -> json("id" -> props.viewer.id, "allTodos" -> js.Dictionary("id" -> props.viewer.id, "allTodos" -> js.Dictionary("count" -> (props.viewer.allTodos.count.asInstanceOf[Int] + 1))))
+    )
+  }
 
   override def getConfigs(): Array[Dictionary[Any]] = {
     js.Array(

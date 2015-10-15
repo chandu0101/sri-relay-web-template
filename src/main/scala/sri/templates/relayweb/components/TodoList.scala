@@ -48,7 +48,7 @@ object TodoList {
 
   case class Props()
 
-  val container = Relay.createContainer(getTypedConstructor(js.constructorOf[Component], classOf[Component]), new RelayContainerSpec {
+  val container = Relay.createContainer(getComponentConstructor(js.constructorOf[Component], classOf[Component]), new RelayContainerSpec {
     override val fragments: Fragments = Fragments(
       "todos" -> (() => js.eval(RelayQL(
         """
@@ -73,7 +73,7 @@ object TodoList {
 
   })
 
-  val factory = getComponentFactory(js.constructorOf[Component], classOf[Component])
+  val ctor = getTypedConstructor(js.constructorOf[Component], classOf[Component])
 
   def apply(todos: js.Dynamic, filter: String, viewer: js.Dynamic, key: js.UndefOr[String] = js.undefined, ref: js.Function1[Component, _] = null) = createRelayElement(container, json(todos = todos, viewer = viewer, filter = filter))
 

@@ -66,7 +66,7 @@ object TodoApp {
 
   case class Props()
 
-  val tctor = getTypedConstructor(js.constructorOf[Component],classOf[Component])
+  val tctor = getComponentConstructor(js.constructorOf[Component],classOf[Component])
   val container = Relay.createContainer(tctor,new RelayContainerSpec {
     override val fragments: Fragments = Fragments("viewer" -> (() => js.eval(RelayQL(
       """
@@ -89,8 +89,8 @@ object TodoApp {
 
   })
 
-  val factory = getComponentFactory(js.constructorOf[Component], classOf[Component])
+  val ctor = getTypedConstructor(js.constructorOf[Component], classOf[Component])
 
-  def apply(key: js.UndefOr[String] = js.undefined, ref: js.Function1[Component, _] = null) = createElement(factory, null, key = key, ref = ref)
+  def apply(key: js.UndefOr[String] = js.undefined, ref: js.Function1[Component, _] = null) = createElement(ctor, null, key = key, ref = ref)
 
 }

@@ -13,7 +13,7 @@ import sri.templates.relayweb.mutations.{ChangeTodoStatusMutation, ChangeTodoTex
 import scala.scalajs.js
 import scala.scalajs.js.Dynamic.{literal => json}
 import scala.scalajs.js.annotation.ScalaJSDefined
-import scala.scalajs.js.{UndefOr => U, undefined}
+import scala.scalajs.js.{UndefOr => U}
 
 
 object Todo {
@@ -72,7 +72,7 @@ object Todo {
       setState(state.copy(isEditing = false))
     }
 
-    def makeInput() : ReactElement = {
+    def makeInput(): ReactElement = {
       if (state.isEditing) TodoInput(className = "edit", initialValue = propsDynamic.todo.text.toString, onSave = handleInputSave _, onCancel = handleInputCancel _, onDelete = handleInputDelete _) else null
     }
 
@@ -80,7 +80,7 @@ object Todo {
 
   case class Props()
 
-  val container = Relay.createContainer(getTypedConstructor(js.constructorOf[Component], classOf[Component]), new RelayContainerSpec {
+  val container = Relay.createContainer(getComponentConstructor(js.constructorOf[Component], classOf[Component]), new RelayContainerSpec {
     override val fragments: Fragments = Fragments("todo" -> (() => js.eval(RelayQL(
       """
             fragment on Todo {
@@ -99,8 +99,8 @@ object Todo {
 
   })
 
-  val factory = getComponentFactory(js.constructorOf[Component], classOf[Component])
+  val ctor = getTypedConstructor(js.constructorOf[Component], classOf[Component])
 
-  def apply(todo: js.Dynamic, viewer: js.Dynamic, key: js.UndefOr[String] = js.undefined, ref: js.Function1[Component, _] = null) = createRelayElement(container, json(todo = todo, viewer = viewer),key = key)
+  def apply(todo: js.Dynamic, viewer: js.Dynamic, key: js.UndefOr[String] = js.undefined, ref: js.Function1[Component, _] = null) = createRelayElement(container, json(todo = todo, viewer = viewer), key = key)
 
 }

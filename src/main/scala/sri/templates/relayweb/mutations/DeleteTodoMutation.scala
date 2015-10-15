@@ -11,7 +11,7 @@ import scala.scalajs.js._
 import scala.scalajs.js.annotation.ScalaJSDefined
 
 @ScalaJSDefined
-class DeleteTodoMutation(props: js.Dynamic) extends RelayMutation(props) {
+class DeleteTodoMutation(input: js.Dynamic) extends RelayMutation(input) {
 
   override def getMutation(): MutationFragment = js.eval(RelayQL( """mutation { deleteTodo}"""))
 
@@ -35,10 +35,10 @@ class DeleteTodoMutation(props: js.Dynamic) extends RelayMutation(props) {
     js.Dictionary("type" -> "FIELDS_CHANGE", "fieldIDs" -> js.Dictionary("viewer" -> props.viewer.id))
   )
 
-//  override def getOptimisticResponse(): UndefOr[Object] = {
-//    println(s"optimistic response props")
-//    dom.window.console.log(props)
-//    json(id = props.id,
-//      viewer = json(id = props.viewer.id, allTodos = json(count = props.viewer.allTodos.count.asInstanceOf[Int] - 1)))
-//  }
+  override def getOptimisticResponse(): UndefOr[Object] = {
+    println(s"delete optimistic response props")
+    dom.window.console.log(props)
+    json(id = props.id,
+      viewer = json(id = props.viewer.id, allTodos = json(count = props.viewer.allTodos.count.asInstanceOf[Int] - 1)))
+  }
 }

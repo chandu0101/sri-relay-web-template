@@ -44,3 +44,9 @@ web-examples/node_modules/
 #relay-web-examples
 relay-web-examples/assets/
 relay-web-examples/node_modules/
+
+#build
+
+build/relay-babel-input.js
+build/relay-babel-output.js
+

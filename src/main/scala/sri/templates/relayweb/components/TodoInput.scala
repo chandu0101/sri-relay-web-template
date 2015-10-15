@@ -63,8 +63,8 @@ object TodoInput {
 
   case class Props(initialValue: String = "", className: String, onSave: (String) => _, onDelete: () => _, onCancel: () => _)
 
-  val factory = getComponentFactory(js.constructorOf[Component], classOf[Component])
+  val ctor = getTypedConstructor(js.constructorOf[Component], classOf[Component])
 
-  def apply(initialValue: String = "", className: String = "", onSave: (String) => _, onDelete: () => _ = null, onCancel: () => _ = null, key: js.UndefOr[String] = js.undefined, ref: js.Function1[Component, _] = null) = createElement(factory, Props(initialValue, className, onSave, onDelete, onCancel), key = key, ref = ref)
+  def apply(initialValue: String = "", className: String = "", onSave: (String) => _, onDelete: () => _ = null, onCancel: () => _ = null, key: js.UndefOr[String] = js.undefined, ref: js.Function1[Component, _] = null) = createElement(ctor, Props(initialValue, className, onSave, onDelete, onCancel), key = key, ref = ref)
 
 }

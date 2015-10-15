@@ -4,7 +4,7 @@ name := "sri-relay-web-template"
 
 scalaVersion := "2.11.7"
 
-val sriVersion = "0.1.0-SNAPSHOT"
+val sriVersion = "0.1.0"
 
 libraryDependencies ++= Seq("com.github.chandu0101.sri" %%% "web" % sriVersion,
   "com.github.chandu0101.sri" %%% "relay" % sriVersion)

@@ -10,7 +10,7 @@ import scala.scalajs.js.annotation.ScalaJSDefined
 import scala.scalajs.js.{Any, Array, Dictionary, UndefOr}
 
 @ScalaJSDefined
-class ChangeTodoTextMutation(props : js.Dynamic) extends RelayMutation(props) {
+class ChangeTodoTextMutation(input : js.Dynamic) extends RelayMutation(input) {
   override def getMutation(): MutationFragment = js.eval(RelayQL( """mutation {updateTodo}"""))
 
   override def getVariables(): js.Object = json(id = props.id, text = props.text)
@@ -24,11 +24,13 @@ class ChangeTodoTextMutation(props : js.Dynamic) extends RelayMutation(props) {
             }
     """))
 
+
+
   override def getConfigs(): Array[Dictionary[Any]] = js.Array(
     js.Dictionary("type" -> "FIELDS_CHANGE", "fieldIDs" -> js.Dictionary("changedTodo" -> props.id))
   )
 
-//  override def getOptimisticResponse(): UndefOr[js.Object] = {
-//    json(changedTodo = json(id = props.id, text = props.text))
-//  }
+  override def getOptimisticResponse(): UndefOr[js.Object] = {
+    json(changedTodo = json(id = props.id, text = props.text))
+  }
 }

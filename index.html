@@ -30,7 +30,24 @@
 
 <div id="container"></div>
 
+<script>
+    "use strict";
 
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    var BaseMutation = (function () {
+        function BaseMutation() {
+            _classCallCheck(this, BaseMutation);
+        }
+
+        BaseMutation.prototype.checkThis = function checkThis() {
+            console.log(this.constructor);
+            console.log(this.constructor.fragments);
+        };
+
+        return BaseMutation;
+    })();
+</script>
 <!--all js dependencies-->
 <script type="text/javascript" src="assets/mainpage-bundle.js"></script>
 <script type="text/javascript" src="node_modules/react-relay/dist/relay.js"></script>

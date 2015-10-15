@@ -3,8 +3,10 @@ package sri.templates.relayweb
 import org.scalajs.dom
 import sri.relay.Relay
 import sri.relay.container.RelayRootContainer
+import sri.relay.mutation.{RelayMutation, RelayMutationJS}
 import sri.relay.network.NetworkLayer
 import sri.relay.query.RelayQL
+import sri.relay.tools.RelayTypes.MutationFragment
 import sri.templates.relayweb.components.{Todo, TodoApp, TodoList}
 import sri.templates.relayweb.mutations.{AddTodoMutation, ChangeTodoStatusMutation, ChangeTodoTextMutation, DeleteTodoMutation}
 import sri.templates.relayweb.queries.TodoQuery
@@ -12,8 +14,8 @@ import sri.web.ReactDOM
 
 import scala.scalajs.js
 import scala.scalajs.js.Dynamic.{global => g, literal => json}
-import scala.scalajs.js.JSApp
-import scala.scalajs.js.annotation.JSExport
+import scala.scalajs.js.{Any, Dictionary, Array, JSApp}
+import scala.scalajs.js.annotation.{ExposedJSMember, ScalaJSDefined, JSExport}
 
 object RelayWebApp extends JSApp {
 
@@ -24,7 +26,6 @@ object RelayWebApp extends JSApp {
     Relay.injectNetworkLayer(new Reindex("https://integrated-branch-17.myreindex.com").getRelayNetworkLayer())
 
     val addTodoCtor = js.constructorOf[AddTodoMutation]
-    g.AddTodoMutation = addTodoCtor
     val addTodoFragFunction: js.Function = () => js.eval(RelayQL(
       """
         fragment on ReindexViewer {
@@ -35,6 +36,7 @@ object RelayWebApp extends JSApp {
              }
       """))
     addTodoCtor.fragments = js.Dictionary("viewer" -> addTodoFragFunction)
+    g.AddTodoMutation = addTodoCtor
     addTodoCtor.getFragment = js.Dynamic.global.Relay.Mutation.getFragment
     val deleteTodoCtor = js.constructorOf[DeleteTodoMutation]
     g.DeleteTodoMutation = deleteTodoCtor
@@ -49,8 +51,8 @@ object RelayWebApp extends JSApp {
       """))
 
     deleteTodoCtor.fragments = js.Dictionary("viewer" -> deleteFrag)
-    deleteTodoCtor.getFragment = js.Dynamic.global.Relay.Mutation.getFragment
 
+    deleteTodoCtor.getFragment = js.Dynamic.global.Relay.Mutation.getFragment
 
     g.ChangeTodoStatusMutation = js.constructorOf[ChangeTodoStatusMutation]
     g.ChangeTodoTextMutation = js.constructorOf[ChangeTodoTextMutation]
@@ -61,6 +63,7 @@ object RelayWebApp extends JSApp {
     ReactDOM.render(rc, dom.document.getElementById("container"))
   }
 
+
 }
 
 @js.native
@@ -68,3 +71,4 @@ class Reindex(var url: String) extends js.Object {
 
   def getRelayNetworkLayer(): NetworkLayer = js.native
 }
+

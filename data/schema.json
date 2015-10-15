@@ -11,77 +11,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexQueryRoot",
-          "description": null,
+          "description": "The query root.",
           "fields": [
             {
-              "name": "node",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "ID",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "INTERFACE",
-                "name": "Node",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "viewer",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ReindexViewer",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "getTodo",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": "id of Todo",
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "ID",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Todo",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "getUser",
-              "description": null,
+              "description": "Get a `User` object by ID.",
               "args": [
                 {
                   "name": "id",
@@ -107,8 +41,128 @@
               "deprecationReason": null
             },
             {
+              "name": "node",
+              "description": "Get any Node by ID.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "The ID of the object.",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "INTERFACE",
+                "name": "Node",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "getReindexType",
+              "description": "Get a `ReindexType` object by ID.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "id of ReindexType",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexType",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "getSeed",
+              "description": "Get a `Seed` object by ID.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "id of Seed",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Seed",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "viewer",
+              "description": "Returns the global node with fields used to query all the objects by type as well as the currently signed in user in the `user` field.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexViewer",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "getReindexAuthenticationProvider",
+              "description": "Get a `ReindexAuthenticationProvider` object by ID.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "id of ReindexAuthenticationProvider",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexAuthenticationProvider",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "getReindexPermission",
-              "description": null,
+              "description": "Get a `ReindexPermission` object by ID.",
               "args": [
                 {
                   "name": "id",
@@ -135,7 +189,7 @@
             },
             {
               "name": "getReindexSecret",
-              "description": null,
+              "description": "Get a `ReindexSecret` object by ID.",
               "args": [
                 {
                   "name": "id",
@@ -161,12 +215,12 @@
               "deprecationReason": null
             },
             {
-              "name": "getReindexAuthenticationProvider",
-              "description": null,
+              "name": "getTodo",
+              "description": "Get a `Todo` object by ID.",
               "args": [
                 {
                   "name": "id",
-                  "description": "id of ReindexAuthenticationProvider",
+                  "description": "id of Todo",
                   "type": {
                     "kind": "NON_NULL",
                     "name": null,
@@ -181,34 +235,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "ReindexAuthenticationProvider",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "getReindexType",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": "id of ReindexType",
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "ID",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ReindexType",
+                "name": "Todo",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -231,663 +258,13 @@
           "possibleTypes": null
         },
         {
-          "kind": "INTERFACE",
-          "name": "Node",
-          "description": "An object with a globally unique id.",
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": [
-            {
-              "kind": "OBJECT",
-              "name": "ReindexType",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "ReindexSecret",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "ReindexAuthenticationProvider",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "ReindexPermission",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "User",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "Todo",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "ReindexViewer",
-              "ofType": null
-            }
-          ]
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ReindexType",
-          "description": null,
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "kind",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "name",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "interfaces",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "fields",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "ReindexField",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "permissions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ReindexPermissionConnection",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluralName",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-            {
-              "kind": "INTERFACE",
-              "name": "Node",
-              "ofType": null
-            }
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "String",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ReindexField",
-          "description": null,
-          "fields": [
-            {
-              "name": "type",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "name",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "description",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "nonNull",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "builtin",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "deprecationReason",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "ofType",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "reverseName",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "grantPermissions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ReindexPermissionSet",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "defaultOrdering",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ReindexOrdering",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "Boolean",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ReindexPermissionSet",
-          "description": null,
-          "fields": [
-            {
-              "name": "read",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "create",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "update",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "delete",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ReindexOrdering",
-          "description": null,
-          "fields": [
-            {
-              "name": "order",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "ENUM",
-                "name": "ReindexOrder",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "field",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "ENUM",
-          "name": "ReindexOrder",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": [
-            {
-              "name": "ASC",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "DESC",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ReindexPermissionConnection",
-          "description": null,
-          "fields": [
-            {
-              "name": "count",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "nodes",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "ReindexPermission",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "edges",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "ReindexPermissionEdge",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pageInfo",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "PageInfo",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "Int",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ReindexPermission",
-          "description": null,
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "user",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "User",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "type",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ReindexType",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "read",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "create",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "update",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "delete",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-            {
-              "kind": "INTERFACE",
-              "name": "Node",
-              "ofType": null
-            }
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
           "kind": "OBJECT",
           "name": "User",
           "description": null,
           "fields": [
             {
               "name": "credentials",
-              "description": null,
+              "description": "The credentials this user can use to sign in.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -899,11 +276,11 @@
             },
             {
               "name": "permissions",
-              "description": null,
+              "description": "The permissions granted to this user.",
               "args": [
                 {
                   "name": "first",
-                  "description": null,
+                  "description": "Number of edges to include from the beginning of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -913,7 +290,7 @@
                 },
                 {
                   "name": "last",
-                  "description": null,
+                  "description": "Number of edges to include from the end of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -923,7 +300,7 @@
                 },
                 {
                   "name": "before",
-                  "description": null,
+                  "description": "Only return edges before given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -933,7 +310,7 @@
                 },
                 {
                   "name": "after",
-                  "description": null,
+                  "description": "Only return edges after given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -943,7 +320,7 @@
                 },
                 {
                   "name": "orderBy",
-                  "description": null,
+                  "description": "The ordering to sort the results by.",
                   "type": {
                     "kind": "INPUT_OBJECT",
                     "name": "ReindexOrderingInput",
@@ -989,143 +366,129 @@
           "possibleTypes": null
         },
         {
-          "kind": "OBJECT",
-          "name": "ReindexCredentialCollection",
-          "description": null,
+          "kind": "INTERFACE",
+          "name": "Node",
+          "description": "An object with a globally unique ID.",
           "fields": [
             {
-              "name": "facebook",
-              "description": null,
+              "name": "id",
+              "description": "The ID of the object.",
               "args": [],
               "type": {
-                "kind": "OBJECT",
-                "name": "ReindexFacebookCredential",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "github",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ReindexGithubCredential",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "google",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ReindexGoogleCredential",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "twitter",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ReindexTwitterCredential",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null
             }
           ],
           "inputFields": null,
-          "interfaces": [],
+          "interfaces": null,
           "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ReindexFacebookCredential",
-          "description": null,
-          "fields": [
+          "possibleTypes": [
             {
-              "name": "accessToken",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
+              "kind": "OBJECT",
+              "name": "ReindexType",
+              "ofType": null
             },
             {
-              "name": "displayName",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
+              "kind": "OBJECT",
+              "name": "ReindexSecret",
+              "ofType": null
             },
             {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
+              "kind": "OBJECT",
+              "name": "ReindexAuthenticationProvider",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ReindexPermission",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "User",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Seed",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Todo",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ReindexViewer",
+              "ofType": null
             }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
+          ]
         },
         {
           "kind": "OBJECT",
-          "name": "ReindexGithubCredential",
-          "description": null,
+          "name": "ReindexType",
+          "description": "\nA custom type defined in the app. Normally created by\ncreating a migration with the CLI tool.\n\nSee: [Reindex tutorial: Defining the schema\n](https://www.reindex.io/docs/tutorial/defining-the-schema/)\n",
           "fields": [
             {
-              "name": "accessToken",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "displayName",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "id",
-              "description": null,
+              "description": "The ID of the object.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "kind",
+              "description": "The kind of the type. (Only \"OBJECT\" is currently supported.)",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "name",
+              "description": "The name of the type.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "description",
+              "description": "Description of the type.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1136,67 +499,52 @@
               "deprecationReason": null
             },
             {
-              "name": "email",
-              "description": null,
+              "name": "interfaces",
+              "description": "The names of interfaces the type implements. (Only \"Node\" is currently supported.)",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "fields",
+              "description": "A list of fields for the type.",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ReindexField",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "permissions",
+              "description": "All the permissions defined for this type.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexPermissionConnection",
                 "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "username",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ReindexGoogleCredential",
-          "description": null,
-          "fields": [
-            {
-              "name": "accessToken",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "displayName",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "id",
-              "description": null,
+              "name": "pluralName",
+              "description": "An optional pluralized name for the type. If not specified, the default English pluralization will be used for field names like `allStories`.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1208,18 +556,66 @@
             }
           ],
           "inputFields": null,
-          "interfaces": [],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "Node",
+              "ofType": null
+            }
+          ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "String",
+          "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
         },
         {
           "kind": "OBJECT",
-          "name": "ReindexTwitterCredential",
-          "description": null,
+          "name": "ReindexField",
+          "description": "A field of a custom type.",
           "fields": [
             {
-              "name": "accessToken",
-              "description": null,
+              "name": "type",
+              "description": "The return type of the field",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "name",
+              "description": "Name of the field.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "description",
+              "description": "Description for the GraphQL field.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1230,8 +626,32 @@
               "deprecationReason": null
             },
             {
-              "name": "displayName",
-              "description": null,
+              "name": "nonNull",
+              "description": "Defines whether this field will be non-null in the output type.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "builtin",
+              "description": "True for builtin fields defined by the system.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "deprecationReason",
+              "description": "If set, makes the field show as deprecated.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1242,8 +662,8 @@
               "deprecationReason": null
             },
             {
-              "name": "id",
-              "description": null,
+              "name": "ofType",
+              "description": "The inner type for a Connection or List field.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1254,8 +674,8 @@
               "deprecationReason": null
             },
             {
-              "name": "accessTokenSecret",
-              "description": null,
+              "name": "reverseName",
+              "description": "For Connection and Node fields, the name of the related field in the connected type.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1266,12 +686,24 @@
               "deprecationReason": null
             },
             {
-              "name": "username",
-              "description": null,
+              "name": "grantPermissions",
+              "description": "For fields of type `User`, the permissions granted to the user connected using this field.",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "ReindexPermissionSet",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "defaultOrdering",
+              "description": "Default ordering (for a connection field).",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexOrdering",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1285,8 +717,8 @@
         },
         {
           "kind": "SCALAR",
-          "name": "Cursor",
-          "description": null,
+          "name": "Boolean",
+          "description": "The `Boolean` scalar type represents `true` or `false`.",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
@@ -1294,24 +726,85 @@
           "possibleTypes": null
         },
         {
-          "kind": "INPUT_OBJECT",
-          "name": "ReindexOrderingInput",
-          "description": null,
-          "fields": null,
-          "inputFields": [
+          "kind": "OBJECT",
+          "name": "ReindexPermissionSet",
+          "description": "A set of granted permissions.",
+          "fields": [
+            {
+              "name": "read",
+              "description": "If true, grants a read permission.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "create",
+              "description": "If true, grants a create permission.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "update",
+              "description": "If true, grants an update permission.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "delete",
+              "description": "If true, grants a delete permission.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexOrdering",
+          "description": "A sort ordering, consist of a name of a field and an order (ascending/descending).",
+          "fields": [
             {
               "name": "order",
-              "description": null,
+              "description": "A sorting order, either ASC or DESC.",
+              "args": [],
               "type": {
                 "kind": "ENUM",
                 "name": "ReindexOrder",
                 "ofType": null
               },
-              "defaultValue": null
+              "isDeprecated": false,
+              "deprecationReason": null
             },
             {
               "name": "field",
-              "description": null,
+              "description": "The name of the field the result is sorted by.",
+              "args": [],
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -1321,10 +814,221 @@
                   "ofType": null
                 }
               },
-              "defaultValue": null
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ReindexOrder",
+          "description": "A sort order (ascending/descending).",
+          "fields": null,
+          "inputFields": null,
           "interfaces": null,
+          "enumValues": [
+            {
+              "name": "ASC",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "DESC",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexPermissionConnection",
+          "description": null,
+          "fields": [
+            {
+              "name": "count",
+              "description": "The total number of nodes included in the connection.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "nodes",
+              "description": "A plain list of ReindexPermission objects without the ReindexPermissionEdge wrapper object.",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ReindexPermission",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "edges",
+              "description": "A list of edges included in the connection.",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ReindexPermissionEdge",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pageInfo",
+              "description": "Information used by the client for paginating the connection.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Int",
+          "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^53 - 1) and 2^53 - 1 since represented in JSON as double-precision floating point numbers specifiedby [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexPermission",
+          "description": "A create/read/update/delete permission to a specific type. Can be granted to a specific `user`, or as a wildcard permission to all users by setting user to `null`.",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "user",
+              "description": "The user the permission is granted to.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "User",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "type",
+              "description": "The type the permission applies to.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexType",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "read",
+              "description": "If true, grants a read permission.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "create",
+              "description": "If true, grants a create permission.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "update",
+              "description": "If true, grants an update permission.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "delete",
+              "description": "If true, grants a delete permission.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "Node",
+              "ofType": null
+            }
+          ],
           "enumValues": null,
           "possibleTypes": null
         },
@@ -1364,6 +1068,16 @@
           ],
           "inputFields": null,
           "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Cursor",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
         },
@@ -1413,11 +1127,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexSecret",
-          "description": null,
+          "description": "Stores a secret used for signing authentication tokens for an app.",
           "fields": [
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the object.",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -1433,7 +1147,7 @@
             },
             {
               "name": "value",
-              "description": null,
+              "description": "A long secret string used for signing authentication tokens.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1458,11 +1172,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexAuthenticationProvider",
-          "description": null,
+          "description": "An authentication provider includes the settings for an\nauthentication method used for signup and login.\n\nCurrently supported providers are:\n* Facebook (provider type `facebook`)\n* Google (provider type `google`)\n* Twitter (provider type `twitter`)\n* GitHub (provider type `github`)\n\nSee also:\n[Reindex tutorial: Authentication\n](https://www.reindex.io/docs/tutorial/authentication/)\n",
           "fields": [
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the object.",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -1478,7 +1192,7 @@
             },
             {
               "name": "type",
-              "description": null,
+              "description": "The provider type (e.g. facebook).",
               "args": [],
               "type": {
                 "kind": "ENUM",
@@ -1490,7 +1204,7 @@
             },
             {
               "name": "clientId",
-              "description": null,
+              "description": "The client ID for the application (e.g. for the `facebook` provider this is `Facebook App ID` of the Facebook app used for authentication.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1502,7 +1216,7 @@
             },
             {
               "name": "clientSecret",
-              "description": null,
+              "description": "The client secret for the application (e.g. for the `facebook` provider this is the `Facebook App Secret` of the Facebook app used for authentication.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1514,7 +1228,7 @@
             },
             {
               "name": "isEnabled",
-              "description": null,
+              "description": "Must be set to `true` to enable user authentication using this provider.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1539,7 +1253,7 @@
         {
           "kind": "ENUM",
           "name": "ReindexProviderType",
-          "description": null,
+          "description": "Defines the type of authentication service.",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
@@ -1569,6 +1283,87 @@
               "deprecationReason": null
             }
           ],
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Seed",
+          "description": null,
+          "fields": [
+            {
+              "name": "category",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "duration",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "Node",
+              "ofType": null
+            }
+          ],
+          "enumValues": null,
           "possibleTypes": null
         },
         {
@@ -1631,15 +1426,15 @@
         {
           "kind": "OBJECT",
           "name": "ReindexViewer",
-          "description": null,
+          "description": "The global node with fields used to query all the objects by type as well as the currently signed in user in the `user` field.",
           "fields": [
             {
               "name": "allTodos",
-              "description": null,
+              "description": "A connection with all objects of type `Todo`",
               "args": [
                 {
                   "name": "first",
-                  "description": null,
+                  "description": "Number of edges to include from the beginning of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1649,7 +1444,7 @@
                 },
                 {
                   "name": "last",
-                  "description": null,
+                  "description": "Number of edges to include from the end of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1659,7 +1454,7 @@
                 },
                 {
                   "name": "before",
-                  "description": null,
+                  "description": "Only return edges before given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1669,7 +1464,7 @@
                 },
                 {
                   "name": "after",
-                  "description": null,
+                  "description": "Only return edges after given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1679,7 +1474,7 @@
                 },
                 {
                   "name": "orderBy",
-                  "description": null,
+                  "description": "The ordering to sort the results by.",
                   "type": {
                     "kind": "INPUT_OBJECT",
                     "name": "ReindexOrderingInput",
@@ -1698,11 +1493,11 @@
             },
             {
               "name": "allUsers",
-              "description": null,
+              "description": "A connection with all objects of type `User`",
               "args": [
                 {
                   "name": "first",
-                  "description": null,
+                  "description": "Number of edges to include from the beginning of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1712,7 +1507,7 @@
                 },
                 {
                   "name": "last",
-                  "description": null,
+                  "description": "Number of edges to include from the end of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1722,7 +1517,7 @@
                 },
                 {
                   "name": "before",
-                  "description": null,
+                  "description": "Only return edges before given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1732,7 +1527,7 @@
                 },
                 {
                   "name": "after",
-                  "description": null,
+                  "description": "Only return edges after given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1742,7 +1537,7 @@
                 },
                 {
                   "name": "orderBy",
-                  "description": null,
+                  "description": "The ordering to sort the results by.",
                   "type": {
                     "kind": "INPUT_OBJECT",
                     "name": "ReindexOrderingInput",
@@ -1761,11 +1556,11 @@
             },
             {
               "name": "allReindexPermissions",
-              "description": null,
+              "description": "A connection with all objects of type `ReindexPermission`",
               "args": [
                 {
                   "name": "first",
-                  "description": null,
+                  "description": "Number of edges to include from the beginning of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1775,7 +1570,7 @@
                 },
                 {
                   "name": "last",
-                  "description": null,
+                  "description": "Number of edges to include from the end of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1785,7 +1580,7 @@
                 },
                 {
                   "name": "before",
-                  "description": null,
+                  "description": "Only return edges before given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1795,7 +1590,7 @@
                 },
                 {
                   "name": "after",
-                  "description": null,
+                  "description": "Only return edges after given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1805,7 +1600,7 @@
                 },
                 {
                   "name": "orderBy",
-                  "description": null,
+                  "description": "The ordering to sort the results by.",
                   "type": {
                     "kind": "INPUT_OBJECT",
                     "name": "ReindexOrderingInput",
@@ -1824,11 +1619,11 @@
             },
             {
               "name": "allReindexSecrets",
-              "description": null,
+              "description": "A connection with all objects of type `ReindexSecret`",
               "args": [
                 {
                   "name": "first",
-                  "description": null,
+                  "description": "Number of edges to include from the beginning of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1838,7 +1633,7 @@
                 },
                 {
                   "name": "last",
-                  "description": null,
+                  "description": "Number of edges to include from the end of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1848,7 +1643,7 @@
                 },
                 {
                   "name": "before",
-                  "description": null,
+                  "description": "Only return edges before given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1858,7 +1653,7 @@
                 },
                 {
                   "name": "after",
-                  "description": null,
+                  "description": "Only return edges after given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1868,7 +1663,7 @@
                 },
                 {
                   "name": "orderBy",
-                  "description": null,
+                  "description": "The ordering to sort the results by.",
                   "type": {
                     "kind": "INPUT_OBJECT",
                     "name": "ReindexOrderingInput",
@@ -1886,12 +1681,12 @@
               "deprecationReason": null
             },
             {
-              "name": "allReindexAuthenticationProviders",
-              "description": null,
+              "name": "allSeeds",
+              "description": "A connection with all objects of type `Seed`",
               "args": [
                 {
                   "name": "first",
-                  "description": null,
+                  "description": "Number of edges to include from the beginning of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1901,7 +1696,7 @@
                 },
                 {
                   "name": "last",
-                  "description": null,
+                  "description": "Number of edges to include from the end of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1911,7 +1706,7 @@
                 },
                 {
                   "name": "before",
-                  "description": null,
+                  "description": "Only return edges before given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1921,7 +1716,7 @@
                 },
                 {
                   "name": "after",
-                  "description": null,
+                  "description": "Only return edges after given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1931,7 +1726,70 @@
                 },
                 {
                   "name": "orderBy",
-                  "description": null,
+                  "description": "The ordering to sort the results by.",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "ReindexOrderingInput",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "_SeedConnection",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "allReindexAuthenticationProviders",
+              "description": "A connection with all objects of type `ReindexAuthenticationProvider`",
+              "args": [
+                {
+                  "name": "first",
+                  "description": "Number of edges to include from the beginning of the result.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": "10"
+                },
+                {
+                  "name": "last",
+                  "description": "Number of edges to include from the end of the result.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "before",
+                  "description": "Only return edges before given cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Cursor",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "after",
+                  "description": "Only return edges after given cursor.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Cursor",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "orderBy",
+                  "description": "The ordering to sort the results by.",
                   "type": {
                     "kind": "INPUT_OBJECT",
                     "name": "ReindexOrderingInput",
@@ -1950,11 +1808,11 @@
             },
             {
               "name": "allReindexTypes",
-              "description": null,
+              "description": "A connection with all objects of type `ReindexType`",
               "args": [
                 {
                   "name": "first",
-                  "description": null,
+                  "description": "Number of edges to include from the beginning of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1964,7 +1822,7 @@
                 },
                 {
                   "name": "last",
-                  "description": null,
+                  "description": "Number of edges to include from the end of the result.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Int",
@@ -1974,7 +1832,7 @@
                 },
                 {
                   "name": "before",
-                  "description": null,
+                  "description": "Only return edges before given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1984,7 +1842,7 @@
                 },
                 {
                   "name": "after",
-                  "description": null,
+                  "description": "Only return edges after given cursor.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "Cursor",
@@ -1994,7 +1852,7 @@
                 },
                 {
                   "name": "orderBy",
-                  "description": null,
+                  "description": "The ordering to sort the results by.",
                   "type": {
                     "kind": "INPUT_OBJECT",
                     "name": "ReindexOrderingInput",
@@ -2013,7 +1871,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the global viewer node.",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2029,7 +1887,7 @@
             },
             {
               "name": "user",
-              "description": null,
+              "description": "The signed in user. Returned for requests made as a user signed in using Reindex authentication.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -2041,7 +1899,7 @@
             },
             {
               "name": "__intercomSettings",
-              "description": null,
+              "description": "INTERNAL",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -2064,13 +1922,48 @@
           "possibleTypes": null
         },
         {
+          "kind": "INPUT_OBJECT",
+          "name": "ReindexOrderingInput",
+          "description": "The input object for mutations of type `${type.name}`.",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "order",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "ReindexOrder",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "field",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
           "kind": "OBJECT",
           "name": "_TodoConnection",
           "description": null,
           "fields": [
             {
               "name": "count",
-              "description": null,
+              "description": "The total number of nodes included in the connection.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -2082,7 +1975,7 @@
             },
             {
               "name": "nodes",
-              "description": null,
+              "description": "A plain list of Todo objects without the _TodoEdge wrapper object.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2098,7 +1991,7 @@
             },
             {
               "name": "edges",
-              "description": null,
+              "description": "A list of edges included in the connection.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2114,7 +2007,7 @@
             },
             {
               "name": "pageInfo",
-              "description": null,
+              "description": "Information used by the client for paginating the connection.",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2180,7 +2073,7 @@
           "fields": [
             {
               "name": "count",
-              "description": null,
+              "description": "The total number of nodes included in the connection.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -2192,7 +2085,7 @@
             },
             {
               "name": "nodes",
-              "description": null,
+              "description": "A plain list of User objects without the _UserEdge wrapper object.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2208,7 +2101,7 @@
             },
             {
               "name": "edges",
-              "description": null,
+              "description": "A list of edges included in the connection.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2224,7 +2117,7 @@
             },
             {
               "name": "pageInfo",
-              "description": null,
+              "description": "Information used by the client for paginating the connection.",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2290,7 +2183,7 @@
           "fields": [
             {
               "name": "count",
-              "description": null,
+              "description": "The total number of nodes included in the connection.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -2302,7 +2195,7 @@
             },
             {
               "name": "nodes",
-              "description": null,
+              "description": "A plain list of ReindexSecret objects without the ReindexSecretEdge wrapper object.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2318,7 +2211,7 @@
             },
             {
               "name": "edges",
-              "description": null,
+              "description": "A list of edges included in the connection.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2334,7 +2227,7 @@
             },
             {
               "name": "pageInfo",
-              "description": null,
+              "description": "Information used by the client for paginating the connection.",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2395,12 +2288,12 @@
         },
         {
           "kind": "OBJECT",
-          "name": "ReindexAuthenticationProviderConnection",
+          "name": "_SeedConnection",
           "description": null,
           "fields": [
             {
               "name": "count",
-              "description": null,
+              "description": "The total number of nodes included in the connection.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -2412,7 +2305,117 @@
             },
             {
               "name": "nodes",
+              "description": "A plain list of Seed objects without the _SeedEdge wrapper object.",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Seed",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "edges",
+              "description": "A list of edges included in the connection.",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "_SeedEdge",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pageInfo",
+              "description": "Information used by the client for paginating the connection.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "_SeedEdge",
+          "description": null,
+          "fields": [
+            {
+              "name": "cursor",
               "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Cursor",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "node",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Seed",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexAuthenticationProviderConnection",
+          "description": null,
+          "fields": [
+            {
+              "name": "count",
+              "description": "The total number of nodes included in the connection.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "nodes",
+              "description": "A plain list of ReindexAuthenticationProvider objects without the ReindexAuthenticationProviderEdge wrapper object.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2428,7 +2431,7 @@
             },
             {
               "name": "edges",
-              "description": null,
+              "description": "A list of edges included in the connection.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2444,7 +2447,7 @@
             },
             {
               "name": "pageInfo",
-              "description": null,
+              "description": "Information used by the client for paginating the connection.",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2510,7 +2513,7 @@
           "fields": [
             {
               "name": "count",
-              "description": null,
+              "description": "The total number of nodes included in the connection.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -2522,7 +2525,7 @@
             },
             {
               "name": "nodes",
-              "description": null,
+              "description": "A plain list of ReindexType objects without the ReindexTypeEdge wrapper object.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2538,7 +2541,7 @@
             },
             {
               "name": "edges",
-              "description": null,
+              "description": "A list of edges included in the connection.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -2554,7 +2557,7 @@
             },
             {
               "name": "pageInfo",
-              "description": null,
+              "description": "Information used by the client for paginating the connection.",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -2616,7 +2619,7 @@
         {
           "kind": "OBJECT",
           "name": "ReindexIntercomSettings",
-          "description": null,
+          "description": "INTERNAL",
           "fields": [
             {
               "name": "appId",
@@ -2662,20 +2665,319 @@
         },
         {
           "kind": "OBJECT",
+          "name": "ReindexCredentialCollection",
+          "description": "The credentials of the user in different authentication services.",
+          "fields": [
+            {
+              "name": "facebook",
+              "description": "The Facebook credentials of the authenticated user.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexFacebookCredential",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "github",
+              "description": "The GitHub credentials of the authenticated user.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexGithubCredential",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "google",
+              "description": "The Google credentials of the authenticated user.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexGoogleCredential",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "twitter",
+              "description": "The Twitter credentials of the authenticated user.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexTwitterCredential",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexFacebookCredential",
+          "description": "Facebook authentication credentials.",
+          "fields": [
+            {
+              "name": "accessToken",
+              "description": "The OAuth access token obtained for the Facebook user during authentication.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "displayName",
+              "description": "The Facebook user's full name.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": "The Facebook user's ID",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexGithubCredential",
+          "description": "GitHub authentication credentials.",
+          "fields": [
+            {
+              "name": "accessToken",
+              "description": "The OAuth access token obtained for the GitHub user during authentication.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "displayName",
+              "description": "The GitHub user's full name.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": "The GitHub user's ID",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "email",
+              "description": "The GitHub user's email address",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "username",
+              "description": "The user's GitHub username",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexGoogleCredential",
+          "description": "Google authentication credentials.",
+          "fields": [
+            {
+              "name": "accessToken",
+              "description": "The OAuth access token obtained for the Google user during authentication.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "displayName",
+              "description": "The Google user's full name.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": "The Google user's ID",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ReindexTwitterCredential",
+          "description": "Twitter authentication credentials.",
+          "fields": [
+            {
+              "name": "accessToken",
+              "description": "The OAuth access token obtained for the Twitter user during authentication.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "displayName",
+              "description": "The Twitter user's full name.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": "The Twitter user's ID",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "accessTokenSecret",
+              "description": "The OAuth token secret obtained for the Twitter user during authentication.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "username",
+              "description": "The user's Twitter screen name.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
           "name": "ReindexMutationRoot",
-          "description": null,
+          "description": "The mutation root.",
           "fields": [
             {
               "name": "createTodo",
-              "description": null,
+              "description": "Creates a new `Todo` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateTodoInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateTodoInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2690,15 +2992,19 @@
             },
             {
               "name": "deleteReindexPermission",
-              "description": null,
+              "description": "Deletes the given `ReindexPermission` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteReindexPermissionInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteReindexPermissionInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2713,15 +3019,19 @@
             },
             {
               "name": "deleteReindexSecret",
-              "description": null,
+              "description": "Deletes the given `ReindexSecret` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteReindexSecretInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteReindexSecretInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2735,16 +3045,47 @@
               "deprecationReason": null
             },
             {
-              "name": "updateReindexPermission",
-              "description": null,
+              "name": "replaceSeed",
+              "description": "Replaces the given `Seed` object.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateReindexPermissionInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceSeedInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "_SeedPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "updateReindexPermission",
+              "description": "Updates the given `ReindexPermission` object. The given fields are merged to the existing object.",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateReindexPermissionInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2759,15 +3100,19 @@
             },
             {
               "name": "createUser",
-              "description": null,
+              "description": "Creates a new `User` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateUserInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateUserInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2782,7 +3127,7 @@
             },
             {
               "name": "migrate",
-              "description": null,
+              "description": "Migrates the schema of the app.",
               "args": [
                 {
                   "name": "input",
@@ -2809,15 +3154,19 @@
             },
             {
               "name": "createReindexAuthenticationProvider",
-              "description": null,
+              "description": "Creates a new `ReindexAuthenticationProvider` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateReindexAuthenticationProviderInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateReindexAuthenticationProviderInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2831,16 +3180,47 @@
               "deprecationReason": null
             },
             {
-              "name": "updateTodo",
-              "description": null,
+              "name": "createSeed",
+              "description": "Creates a new `Seed` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateTodoInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateSeedInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "_SeedPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "updateTodo",
+              "description": "Updates the given `Todo` object. The given fields are merged to the existing object.",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateTodoInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2855,15 +3235,19 @@
             },
             {
               "name": "deleteTodo",
-              "description": null,
+              "description": "Deletes the given `Todo` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteTodoInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteTodoInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2878,15 +3262,19 @@
             },
             {
               "name": "createReindexPermission",
-              "description": null,
+              "description": "Creates a new `ReindexPermission` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateReindexPermissionInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateReindexPermissionInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2901,15 +3289,19 @@
             },
             {
               "name": "createReindexSecret",
-              "description": null,
+              "description": "Creates a new `ReindexSecret` object.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_CreateReindexSecretInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_CreateReindexSecretInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2924,15 +3316,19 @@
             },
             {
               "name": "updateUser",
-              "description": null,
+              "description": "Updates the given `User` object. The given fields are merged to the existing object.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateUserInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateUserInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2947,15 +3343,19 @@
             },
             {
               "name": "replaceReindexAuthenticationProvider",
-              "description": null,
+              "description": "Replaces the given `ReindexAuthenticationProvider` object.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceReindexAuthenticationProviderInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceReindexAuthenticationProviderInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2970,15 +3370,19 @@
             },
             {
               "name": "deleteUser",
-              "description": null,
+              "description": "Deletes the given `User` object",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteUserInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteUserInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -2993,15 +3397,19 @@
             },
             {
               "name": "replaceTodo",
-              "description": null,
+              "description": "Replaces the given `Todo` object.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceTodoInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceTodoInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3016,15 +3424,19 @@
             },
             {
               "name": "replaceReindexPermission",
-              "description": null,
+              "description": "Replaces the given `ReindexPermission` object.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceReindexPermissionInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceReindexPermissionInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3038,16 +3450,74 @@
               "deprecationReason": null
             },
             {
-              "name": "deleteReindexAuthenticationProvider",
-              "description": null,
+              "name": "updateSeed",
+              "description": "Updates the given `Seed` object. The given fields are merged to the existing object.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_DeleteReindexAuthenticationProviderInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateSeedInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "_SeedPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "deleteSeed",
+              "description": "Deletes the given `Seed` object",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteSeedInput",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "_SeedPayload",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "deleteReindexAuthenticationProvider",
+              "description": "Deletes the given `ReindexAuthenticationProvider` object",
+              "args": [
+                {
+                  "name": "input",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_DeleteReindexAuthenticationProviderInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3062,15 +3532,19 @@
             },
             {
               "name": "replaceUser",
-              "description": null,
+              "description": "Replaces the given `User` object.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_ReplaceUserInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_ReplaceUserInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3085,15 +3559,19 @@
             },
             {
               "name": "updateReindexAuthenticationProvider",
-              "description": null,
+              "description": "Updates the given `ReindexAuthenticationProvider` object. The given fields are merged to the existing object.",
               "args": [
                 {
                   "name": "input",
                   "description": null,
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "_UpdateReindexAuthenticationProviderInput",
-                    "ofType": null
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "_UpdateReindexAuthenticationProviderInput",
+                      "ofType": null
+                    }
                   },
                   "defaultValue": null
                 }
@@ -3140,7 +3618,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -3156,11 +3634,11 @@
         {
           "kind": "OBJECT",
           "name": "_TodoPayload",
-          "description": null,
+          "description": "The payload returned from mutations of `Todo`.",
           "fields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3172,7 +3650,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the mutated object.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3184,7 +3662,7 @@
             },
             {
               "name": "viewer",
-              "description": null,
+              "description": "The global viewer object. Can be used in the client to add\na newly created object to the connection of all objects of\nthe type.\n\nE.g. when creating a Todo object, you can add it\nto `viewer.allTodos` using the following Relay\nmutation config:\n```javascript\n{\n  type: 'RANGE_ADD',\n  parentID: this.props.viewer.id,\n  connectionName: 'allTodos',\n  edgeName: 'changedTodoEdge',\n  rangeBehaviors: {\n    '': 'prepend',\n  },\n}\n```\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3196,7 +3674,7 @@
             },
             {
               "name": "changedTodo",
-              "description": null,
+              "description": "The the mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3208,7 +3686,7 @@
             },
             {
               "name": "changedTodoEdge",
-              "description": null,
+              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3232,7 +3710,7 @@
           "inputFields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -3242,7 +3720,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the deleted object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -3262,11 +3740,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexPermissionPayload",
-          "description": null,
+          "description": "The payload returned from mutations of `ReindexPermission`.",
           "fields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3278,7 +3756,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the mutated object.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3290,7 +3768,7 @@
             },
             {
               "name": "viewer",
-              "description": null,
+              "description": "The global viewer object. Can be used in the client to add\na newly created object to the connection of all objects of\nthe type.\n\nE.g. when creating a ReindexPermission object, you can add it\nto `viewer.allReindexPermissions` using the following Relay\nmutation config:\n```javascript\n{\n  type: 'RANGE_ADD',\n  parentID: this.props.viewer.id,\n  connectionName: 'allReindexPermissions',\n  edgeName: 'changedReindexPermissionEdge',\n  rangeBehaviors: {\n    '': 'prepend',\n  },\n}\n```\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3326,7 +3804,7 @@
             },
             {
               "name": "changedReindexPermission",
-              "description": null,
+              "description": "The the mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3338,7 +3816,7 @@
             },
             {
               "name": "changedReindexPermissionEdge",
-              "description": null,
+              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3362,7 +3840,7 @@
           "inputFields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -3372,7 +3850,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the deleted object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -3392,11 +3870,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexSecretPayload",
-          "description": null,
+          "description": "The payload returned from mutations of `ReindexSecret`.",
           "fields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3408,7 +3886,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the mutated object.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3420,7 +3898,7 @@
             },
             {
               "name": "viewer",
-              "description": null,
+              "description": "The global viewer object. Can be used in the client to add\na newly created object to the connection of all objects of\nthe type.\n\nE.g. when creating a ReindexSecret object, you can add it\nto `viewer.allReindexSecrets` using the following Relay\nmutation config:\n```javascript\n{\n  type: 'RANGE_ADD',\n  parentID: this.props.viewer.id,\n  connectionName: 'allReindexSecrets',\n  edgeName: 'changedReindexSecretEdge',\n  rangeBehaviors: {\n    '': 'prepend',\n  },\n}\n```\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3432,7 +3910,7 @@
             },
             {
               "name": "changedReindexSecret",
-              "description": null,
+              "description": "The the mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3444,11 +3922,159 @@
             },
             {
               "name": "changedReindexSecretEdge",
-              "description": null,
+              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
                 "name": "ReindexSecretEdge",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "_ReplaceSeedInput",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "category",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "duration",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": "The ID of the replaced object.",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "_SeedPayload",
+          "description": "The payload returned from mutations of `Seed`.",
+          "fields": [
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": "The ID of the mutated object.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "viewer",
+              "description": "The global viewer object. Can be used in the client to add\na newly created object to the connection of all objects of\nthe type.\n\nE.g. when creating a Seed object, you can add it\nto `viewer.allSeeds` using the following Relay\nmutation config:\n```javascript\n{\n  type: 'RANGE_ADD',\n  parentID: this.props.viewer.id,\n  connectionName: 'allSeeds',\n  edgeName: 'changedSeedEdge',\n  rangeBehaviors: {\n    '': 'prepend',\n  },\n}\n```\n",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ReindexViewer",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "changedSeed",
+              "description": "The the mutated object.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Seed",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "changedSeedEdge",
+              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "_SeedEdge",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3528,7 +4154,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -3538,7 +4164,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the updated object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -3573,7 +4199,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -3589,7 +4215,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexCredentialCollectionInput",
-          "description": null,
+          "description": "The input object for mutations of type `${type.name}`.",
           "fields": null,
           "inputFields": [
             {
@@ -3640,7 +4266,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexFacebookCredentialInput",
-          "description": null,
+          "description": "The input object for mutations of type `${type.name}`.",
           "fields": null,
           "inputFields": [
             {
@@ -3681,7 +4307,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexGithubCredentialInput",
-          "description": null,
+          "description": "The input object for mutations of type `${type.name}`.",
           "fields": null,
           "inputFields": [
             {
@@ -3742,7 +4368,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexGoogleCredentialInput",
-          "description": null,
+          "description": "The input object for mutations of type `${type.name}`.",
           "fields": null,
           "inputFields": [
             {
@@ -3783,7 +4409,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexTwitterCredentialInput",
-          "description": null,
+          "description": "The input object for mutations of type `${type.name}`.",
           "fields": null,
           "inputFields": [
             {
@@ -3844,11 +4470,11 @@
         {
           "kind": "OBJECT",
           "name": "_UserPayload",
-          "description": null,
+          "description": "The payload returned from mutations of `User`.",
           "fields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3860,7 +4486,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the mutated object.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3872,7 +4498,7 @@
             },
             {
               "name": "viewer",
-              "description": null,
+              "description": "The global viewer object. Can be used in the client to add\na newly created object to the connection of all objects of\nthe type.\n\nE.g. when creating a User object, you can add it\nto `viewer.allUsers` using the following Relay\nmutation config:\n```javascript\n{\n  type: 'RANGE_ADD',\n  parentID: this.props.viewer.id,\n  connectionName: 'allUsers',\n  edgeName: 'changedUserEdge',\n  rangeBehaviors: {\n    '': 'prepend',\n  },\n}\n```\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3884,7 +4510,7 @@
             },
             {
               "name": "changedUser",
-              "description": null,
+              "description": "The the mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3896,7 +4522,7 @@
             },
             {
               "name": "changedUserEdge",
-              "description": null,
+              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -3920,7 +4546,7 @@
           "inputFields": [
             {
               "name": "types",
-              "description": null,
+              "description": "The list of types in the desired schema.",
               "type": {
                 "kind": "LIST",
                 "name": null,
@@ -3934,7 +4560,7 @@
             },
             {
               "name": "force",
-              "description": null,
+              "description": "Must be `true` to run the migration, if it includes destructive commands.",
               "type": {
                 "kind": "SCALAR",
                 "name": "Boolean",
@@ -3944,7 +4570,7 @@
             },
             {
               "name": "dryRun",
-              "description": null,
+              "description": "If `true`, we only validate the schema and return the migration commands without running them.",
               "type": {
                 "kind": "SCALAR",
                 "name": "Boolean",
@@ -3954,7 +4580,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -3985,6 +4611,16 @@
             },
             {
               "name": "name",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "description",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -4039,7 +4675,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexFieldInput",
-          "description": null,
+          "description": "The input object for mutations of type `${type.name}`.",
           "fields": null,
           "inputFields": [
             {
@@ -4158,7 +4794,7 @@
         {
           "kind": "INPUT_OBJECT",
           "name": "ReindexPermissionSetInput",
-          "description": null,
+          "description": "The input object for mutations of type `${type.name}`.",
           "fields": null,
           "inputFields": [
             {
@@ -4213,7 +4849,7 @@
           "fields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -4225,7 +4861,7 @@
             },
             {
               "name": "commands",
-              "description": null,
+              "description": "The commands created for this migration.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -4241,7 +4877,7 @@
             },
             {
               "name": "isExecuted",
-              "description": null,
+              "description": "Indicates whether the migration was executed. Only non-destructive migrations are executed by default.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -4260,11 +4896,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexMigrationCommand",
-          "description": null,
+          "description": "A migration command. This type is never created directly, but returned as a result from calling `migrate`, typically using the `reindex schema-push` command in the CLI.",
           "fields": [
             {
               "name": "commandType",
-              "description": null,
+              "description": "A type of a migration command, e.g. \"CreateField\".",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -4276,7 +4912,7 @@
             },
             {
               "name": "isDestructive",
-              "description": null,
+              "description": "Boolean indicating whether this is a destructive command, i.e. whether running it may permanently delete data.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -4288,7 +4924,7 @@
             },
             {
               "name": "description",
-              "description": null,
+              "description": "A human readable description of the command.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -4352,7 +4988,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4368,11 +5004,11 @@
         {
           "kind": "OBJECT",
           "name": "ReindexAuthenticationProviderPayload",
-          "description": null,
+          "description": "The payload returned from mutations of `ReindexAuthenticationProvider`.",
           "fields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -4384,7 +5020,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the mutated object.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -4396,7 +5032,7 @@
             },
             {
               "name": "viewer",
-              "description": null,
+              "description": "The global viewer object. Can be used in the client to add\na newly created object to the connection of all objects of\nthe type.\n\nE.g. when creating a ReindexAuthenticationProvider object, you can add it\nto `viewer.allReindexAuthenticationProviders` using the following Relay\nmutation config:\n```javascript\n{\n  type: 'RANGE_ADD',\n  parentID: this.props.viewer.id,\n  connectionName: 'allReindexAuthenticationProviders',\n  edgeName: 'changedReindexAuthenticationProviderEdge',\n  rangeBehaviors: {\n    '': 'prepend',\n  },\n}\n```\n",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -4408,7 +5044,7 @@
             },
             {
               "name": "changedReindexAuthenticationProvider",
-              "description": null,
+              "description": "The the mutated object.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -4420,7 +5056,7 @@
             },
             {
               "name": "changedReindexAuthenticationProviderEdge",
-              "description": null,
+              "description": "A connection edge containing the mutated object. Can be used to add a newly created object to a connection.",
               "args": [],
               "type": {
                 "kind": "OBJECT",
@@ -4433,6 +5069,69 @@
           ],
           "inputFields": null,
           "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "_CreateSeedInput",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "category",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "duration",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
         },
@@ -4464,7 +5163,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4474,7 +5173,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the updated object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4499,7 +5198,7 @@
           "inputFields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4509,7 +5208,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the deleted object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4594,7 +5293,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4615,7 +5314,7 @@
           "inputFields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4646,7 +5345,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4656,7 +5355,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the updated object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4721,7 +5420,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4731,7 +5430,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the replaced object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4756,7 +5455,7 @@
           "inputFields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4766,7 +5465,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the deleted object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4811,7 +5510,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4821,7 +5520,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the replaced object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4906,7 +5605,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4916,7 +5615,107 @@
             },
             {
               "name": "id",
+              "description": "The ID of the replaced object.",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "_UpdateSeedInput",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "category",
               "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "duration",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": "The ID of the updated object.",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "_DeleteSeedInput",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "clientMutationId",
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": "The ID of the deleted object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4941,7 +5740,7 @@
           "inputFields": [
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4951,7 +5750,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the deleted object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4986,7 +5785,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4996,7 +5795,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the replaced object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -5061,7 +5860,7 @@
             },
             {
               "name": "clientMutationId",
-              "description": null,
+              "description": "The client mutation ID used by clients like Relay to track the mutation. If given, returned in the response payload of the mutation.",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -5071,7 +5870,7 @@
             },
             {
               "name": "id",
-              "description": null,
+              "description": "The ID of the updated object.",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -5176,7 +5975,7 @@
         {
           "kind": "OBJECT",
           "name": "__Type",
-          "description": null,
+          "description": "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
           "fields": [
             {
               "name": "kind",
@@ -5361,7 +6160,7 @@
         {
           "kind": "ENUM",
           "name": "__TypeKind",
-          "description": "An enum describing what kind of type a given __Type is",
+          "description": "An enum describing what kind of type a given `__Type` is.",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
@@ -5420,7 +6219,7 @@
         {
           "kind": "OBJECT",
           "name": "__Field",
-          "description": null,
+          "description": "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
           "fields": [
             {
               "name": "name",
@@ -5526,7 +6325,7 @@
         {
           "kind": "OBJECT",
           "name": "__InputValue",
-          "description": null,
+          "description": "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
           "fields": [
             {
               "name": "name",
@@ -5574,7 +6373,7 @@
             },
             {
               "name": "defaultValue",
-              "description": null,
+              "description": "A GraphQL-formatted string representing the default value for this input value.",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -5593,7 +6392,7 @@
         {
           "kind": "OBJECT",
           "name": "__EnumValue",
-          "description": null,
+          "description": "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
           "fields": [
             {
               "name": "name",
@@ -5660,7 +6459,7 @@
         {
           "kind": "OBJECT",
           "name": "__Directive",
-          "description": null,
+          "description": "A Directives provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.\n\nIn some cases, you need to provide options to alter GraphQL’s execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
           "fields": [
             {
               "name": "name",

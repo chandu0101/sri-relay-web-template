@@ -11,7 +11,7 @@ import scala.scalajs.js._
 import scala.scalajs.js.annotation.ScalaJSDefined
 
 @ScalaJSDefined
-class ChangeTodoStatusMutation(props : js.Dynamic) extends RelayMutation(props) {
+class ChangeTodoStatusMutation(input : js.Dynamic) extends RelayMutation(input) {
   override def getMutation(): MutationFragment = js.eval(RelayQL("mutation { updateTodo } "))
 
   override def getVariables(): js.Object = json("id" -> props.id, "complete" -> props.complete)
@@ -29,7 +29,7 @@ class ChangeTodoStatusMutation(props : js.Dynamic) extends RelayMutation(props) 
     js.Array(js.Dictionary("type" -> "FIELDS_CHANGE", "fieldIDs" -> js.Dictionary("changedTodo" -> props.id)))
   }
 
-//  override def getOptimisticResponse(): UndefOr[Object] = {
-//    json(changedTodo = json(id = props.id, complete = props.complete))
-//  }
+  override def getOptimisticResponse(): UndefOr[Object] = {
+    json(changedTodo = json(id = props.id, complete = props.complete))
+  }
 }
